@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, Navigate } from "react-router-dom";
-import { getNextPage, shouldRedirect } from "../helpers/shouldRedirect";
+import { getNextPage, shouldRedirect } from "../helpers";
 
 // TODO: Mock here that page do you want to bypass
 // As default it should navigate from Me to Coverage bypassing Financial and Coverage

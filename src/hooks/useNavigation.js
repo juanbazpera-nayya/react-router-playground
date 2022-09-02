@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { getNextPage } from "../helpers/shouldRedirect";
+import { getNextPage } from "../helpers";
 
 const useNavigation = () => {
   const location = useLocation();
