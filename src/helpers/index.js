@@ -9,11 +9,11 @@ const shouldRedirect = {
 };
 
 // TODO: Mock here that page do you want to bypass
-// As default it should navigate from Me to Coverage bypassing Financial and Coverage
+// As default it should navigate from Me to Financial bypassing Family
 const mockedSurvey = {
   redirectMe: false,
   redirectFamily: true,
-  redirectFinancial: true,
+  redirectFinancial: false,
   redirectCoverage: false,
 };
 
@@ -41,7 +41,7 @@ export const getPreviousPath = (currentPath) => {
   const currentRouteIndex = routes.findIndex(
     (route) => route.path === currentPath
   );
-  const remainingRoutes = routes.slice(0, currentRouteIndex - 1);
-  const previousPath = getNotRedirectPath(remainingRoutes.reverse());
+  const remainingRoutes = routes.slice(0, currentRouteIndex).reverse();
+  const previousPath = getNotRedirectPath(remainingRoutes);
   return previousPath;
 };
