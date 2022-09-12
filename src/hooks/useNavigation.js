@@ -1,18 +1,20 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { getNextPage } from "../helpers";
+import { getNextPath, getPreviousPath } from "../helpers";
 
 const useNavigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const next = () => {
-    const nextPath = getNextPage(location.pathname);
+    const nextPath = getNextPath(location.pathname);
     if (!nextPath) return;
     navigate(nextPath);
   };
 
   const back = () => {
-    navigate(-1);
+    const previousPath = getPreviousPath(location.pathname);
+    if (!previousPath) return;
+    navigate(previousPath);
   };
 
   return { next, back };
