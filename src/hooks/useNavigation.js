@@ -19,7 +19,6 @@ const useNavigation = () => {
 
   const navigate = (path) => {
     const nextPath = getNavigationPath(path);
-    console.log(path, " - ", nextPath);
     if (!nextPath) return;
     routeNavigate(nextPath);
   };

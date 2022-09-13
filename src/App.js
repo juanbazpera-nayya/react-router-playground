@@ -13,9 +13,9 @@ const App = () => {
       <p>
         Navigate from an array of routes, and redirects to the next one if the
         current page should be hidden. If you want to show/hide a page, you can
-        change it on component/SurveyLayout file
+        change it on helpers/index file
       </p>
-      <p>As default it will bypass Family and Financial pages</p>
+      <p>As default it will bypass Family page</p>
       <div className="nav">
         {routes.map((route, index) => (
           <button
