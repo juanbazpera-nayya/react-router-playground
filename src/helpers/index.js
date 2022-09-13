@@ -27,6 +27,7 @@ const getNotRedirectPath = (routes) => {
   return nextPath;
 };
 
+// Get the next path bypassing routes that are not supposed to show on mockedSurvey
 export const getNextPath = (currentPath) => {
   const currentRouteIndex = routes.findIndex(
     (route) => route.path === currentPath
@@ -37,6 +38,7 @@ export const getNextPath = (currentPath) => {
   return nextPath;
 };
 
+// Get the previous path bypassing routes that are not supposed to show on mockedSurvey
 export const getPreviousPath = (currentPath) => {
   const currentRouteIndex = routes.findIndex(
     (route) => route.path === currentPath
@@ -44,4 +46,13 @@ export const getPreviousPath = (currentPath) => {
   const remainingRoutes = routes.slice(0, currentRouteIndex).reverse();
   const previousPath = getNotRedirectPath(remainingRoutes);
   return previousPath;
+};
+
+// Get the next route from the route user want to go bypassing the ones that are not supposed to show on mockedSurvey
+export const getNavigationPath = (next) => {
+  const nextIndex = routes.findIndex((route) => route.path === next);
+
+  const remainingRoutes = routes.slice(nextIndex);
+  const nextPath = getNotRedirectPath(remainingRoutes);
+  return nextPath;
 };

@@ -12,3 +12,16 @@
 .section {
   margin: 3rem 0 0 0;
 }
+
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.active {
+  color: #a31d1d;
+}
