@@ -10,18 +10,18 @@ const shouldRedirect = {
 
 // TODO: Mock here that page do you want to bypass
 // As default it should navigate from Me to Financial bypassing Family
-const mockedSurvey = {
+const mockedSurvey = () => ({
   redirectMe: false,
   redirectFamily: true,
   redirectFinancial: false,
   redirectCoverage: false,
-};
+});
 
 const getNotRedirectPath = (routes) => {
   let nextPath = undefined;
   routes.some((route) => {
     nextPath = route.path;
-    return !shouldRedirect[route.path](mockedSurvey);
+    return !shouldRedirect[route.path](mockedSurvey());
   });
 
   return nextPath;

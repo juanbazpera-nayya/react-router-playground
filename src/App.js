@@ -1,7 +1,7 @@
 import { useRoutes, useLocation } from "react-router-dom";
 import routes from "./navigation/routes";
 import useNavigation from "./hooks/useNavigation";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   const element = useRoutes(routes);
